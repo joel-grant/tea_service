@@ -55,3 +55,6 @@
   "tea_id": "<tea_id"
 }
 ```
+
+## Database Design Schema
+<img width="725" alt="Screen Shot 2022-04-20 at 10 30 25 AM" src="https://user-images.githubusercontent.com/69736499/164280862-e0411530-e22f-42f3-8c6e-4d7473027d1e.png">
