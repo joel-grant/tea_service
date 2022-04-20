@@ -9,4 +9,14 @@ class Api::V1::SubscriptionsController < ApplicationController
       render json: SubscriptionSerializer.error("Subscription could not be created!")
     end
   end
+
+  def destroy
+    sub = Subscription.find(params[:id])
+    if sub.valid?
+      sub.update(status: 1)
+      render json: SubscriptionSerializer.new(sub)
+    else
+      render json: SubscriptionSerializer.error("Subscription could not be cancelled!")
+    end
+  end
 end
