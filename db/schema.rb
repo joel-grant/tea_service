@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_032139) do
   create_table "teas", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.float "temperature"
+    t.integer "temperature"
     t.integer "brew_time"
   end
 
