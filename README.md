@@ -25,7 +25,7 @@
 - `GET '/api/v1/subscriptions'`
 ```json
 {
-  "user_id": "<user_id",
+  "user_id": "<user_id>",
   "status": "active"
 }
 ```
@@ -34,7 +34,7 @@
 - `GET '/api/v1/subscriptions'`
 ```json
 {
-  "user_id": "<user_id",
+  "user_id": "<user_id>",
   "status": "cancelled"
 }
 ```
@@ -43,7 +43,7 @@
 - `DELETE '/api/v1/subscriptions'`
 ```json
 {
-  "tea_id": "<tea_id"
+  "tea_id": "<tea_id>"
 }
 ```
 
@@ -52,7 +52,7 @@
 ```json
 {
   "email": "<email>",
-  "tea_id": "<tea_id"
+  "tea_id": "<tea_id>"
 }
 ```
 
