@@ -1,4 +1,16 @@
 class Api::V1::SubscriptionsController < ApplicationController
+  def index
+    customer = Customer.find(params[:customer_id])
+    if params[:status] == "active"
+      subs = customer.get_active_subscriptions
+    elsif params[:status] == "cancelled"
+      subs = customer.get_cancelled_subscriptions
+    else
+      subs = customer.subscriptions
+    end
+    render json: SubscriptionSerializer.new(subs)
+  end
+
   def create
     customer_data = Customer.find_by(email: params[:email])
     tea_data = Tea.find(params[:tea_id])
