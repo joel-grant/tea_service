@@ -71,7 +71,7 @@ RSpec.describe 'Subscription API Endpoints' do
 
       Subscription.create(title: t1.title, price: 10.00, status: 0, frequency: 1, tea_id: t1.id, customer_id: c1.id)
       Subscription.create(title: t2.title, price: 10.00, status: 0, frequency: 1, tea_id: t2.id, customer_id: c1.id)
-      Subscription.create(title: t3.title, price: 10.00, status: 0, frequency: 1, tea_id: t3.id, customer_id: c1.id)
+      Subscription.create(title: t3.title, price: 10.00, status: 1, frequency: 1, tea_id: t3.id, customer_id: c1.id)
 
       get '/api/v1/subscriptions', params: { customer_id: c1.id }
       result = JSON.parse(response.body, symbolize_names: true)
@@ -82,6 +82,7 @@ RSpec.describe 'Subscription API Endpoints' do
 
       expect(result).to have_key(:data)
       expect(result[:data]).to be_an Array
+      expect(result[:data].count).to eq(3)
 
       result[:data].each do |subscription|
         expect(subscription).to have_key(:id)
