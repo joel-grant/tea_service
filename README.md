@@ -1,24 +1,57 @@
-# README
+# Tea Service
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## What is Tea Service?
+- Tea Service is a "take home" for the technical portion of a job interview.
+- A Backend application with endpoints that allow users to subscribe to different teas they find interesting.
+- This repository is made using `rails v. 5.2.7`
 
-Things you may want to cover:
+## How to run tests for this repository
+1. `git clone` this repository.
+2. `cd tea_service`
+3. run `bundle exec rspec` to see the passing tests!
+4. All testing can be found in `/spec` directory.
 
-* Ruby version
+## Endpoint Information:
 
-* System dependencies
+### Get All User Subscriptions
+- `GET '/api/v1/subscriptions'`
+```json
+{
+  "user_id": "<user_id>"
+}
+```
 
-* Configuration
+### Get All Active User Subscriptions
+- `GET '/api/v1/subscriptions'`
+```json
+{
+  "user_id": "<user_id",
+  "status": "active"
+}
+```
 
-* Database creation
+### Get All Cancelled User Subscriptions
+- `GET '/api/v1/subscriptions'`
+```json
+{
+  "user_id": "<user_id",
+  "status": "cancelled"
+}
+```
 
-* Database initialization
+### Cancel A subscription
+- `DELETE '/api/v1/subscriptions'`
+```json
+{
+  "tea_id": "<tea_id"
+}
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Create a new Subscription
+- `'POST '/api/v1/subscriptions'`
+```json
+{
+  "email": "<email>",
+  "tea_id": "<tea_id"
+}
+```
