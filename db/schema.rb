@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_032139) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "title"
     t.float "price"
-    t.integer "status"
+    t.integer "status", default: 0
     t.integer "frequency"
     t.bigint "tea_id"
     t.bigint "customer_id"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_032139) do
     t.string "title"
     t.string "description"
     t.float "temperature"
-    t.string "brew_time"
+    t.integer "brew_time"
   end
 
   add_foreign_key "subscriptions", "customers"
