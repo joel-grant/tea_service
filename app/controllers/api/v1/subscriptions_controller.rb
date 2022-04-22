@@ -22,7 +22,7 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
-  def destroy
+  def update
     sub = Subscription.find(params[:id])
     if sub.valid?
       sub.update(status: 1)
