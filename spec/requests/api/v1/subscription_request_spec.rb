@@ -7,7 +7,7 @@ RSpec.describe 'Subscription API Endpoints' do
       tea_data = 1
       c1 = Customer.create(first_name: "Test", last_name: "Person1", email: "test@person1.com", address: "12345 Something Road")
       t1 = Tea.create(title: "Earl Grey", description: "Black Tea", temperature: 110, brew_time: 3)
-      post "/api/v1/customers/#{c1.id}/subscriptions", params: { customer_id: c1.id, tea_id: t1.id }
+      post "/api/v1/customers/#{c1.id}/subscriptions", params: { tea_id: t1.id }
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
@@ -73,7 +73,7 @@ RSpec.describe 'Subscription API Endpoints' do
       Subscription.create(title: t2.title, price: 10.00, status: 0, frequency: 1, tea_id: t2.id, customer_id: c1.id)
       Subscription.create(title: t3.title, price: 10.00, status: 1, frequency: 1, tea_id: t3.id, customer_id: c1.id)
 
-      get "/api/v1/customers/#{c1.id}/subscriptions", params: { customer_id: c1.id }
+      get "/api/v1/customers/#{c1.id}/subscriptions"
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
@@ -109,7 +109,7 @@ RSpec.describe 'Subscription API Endpoints' do
       Subscription.create(title: t2.title, price: 10.00, status: 0, frequency: 1, tea_id: t2.id, customer_id: c1.id)
       Subscription.create(title: t3.title, price: 10.00, status: 1, frequency: 1, tea_id: t3.id, customer_id: c1.id)
 
-      get "/api/v1/customers/#{c1.id}/subscriptions", params: { customer_id: c1.id, status: "active" }
+      get "/api/v1/customers/#{c1.id}/subscriptions", params: { status: "active" }
       result = JSON.parse(response.body, symbolize_names: true)
       expect(response).to be_successful
 
@@ -144,7 +144,7 @@ RSpec.describe 'Subscription API Endpoints' do
       Subscription.create(title: t2.title, price: 10.00, status: 0, frequency: 1, tea_id: t2.id, customer_id: c1.id)
       Subscription.create(title: t3.title, price: 10.00, status: 1, frequency: 1, tea_id: t3.id, customer_id: c1.id)
 
-      get "/api/v1/customers/#{c1.id}/subscriptions", params: { customer_id: c1.id, status: "cancelled" }
+      get "/api/v1/customers/#{c1.id}/subscriptions", params: { status: "cancelled" }
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(result).to be_a Hash
