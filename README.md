@@ -25,7 +25,7 @@
 - `GET '/api/v1/subscriptions'`
 ```json
 {
-  "user_id": "<user_id",
+  "user_id": "<user_id>",
   "status": "active"
 }
 ```
@@ -34,7 +34,7 @@
 - `GET '/api/v1/subscriptions'`
 ```json
 {
-  "user_id": "<user_id",
+  "user_id": "<user_id>",
   "status": "cancelled"
 }
 ```
@@ -43,7 +43,7 @@
 - `DELETE '/api/v1/subscriptions'`
 ```json
 {
-  "tea_id": "<tea_id"
+  "tea_id": "<tea_id>"
 }
 ```
 
@@ -52,9 +52,11 @@
 ```json
 {
   "email": "<email>",
-  "tea_id": "<tea_id"
+  "tea_id": "<tea_id>"
 }
 ```
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90fcbcf72d555bcbc462?action=collection%2Fimport)
 
 ## Database Design Schema
 <img width="725" alt="Screen Shot 2022-04-20 at 10 30 25 AM" src="https://user-images.githubusercontent.com/69736499/164280862-e0411530-e22f-42f3-8c6e-4d7473027d1e.png">
