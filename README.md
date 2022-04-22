@@ -43,6 +43,7 @@
                 "frequency": "biweekly"
             }
         }
+  ]
 }
 ```
   
@@ -79,6 +80,7 @@
                 "frequency": "biweekly"
             }
         }
+  ]
 }
 ```
   
