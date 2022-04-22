@@ -7,7 +7,7 @@ RSpec.describe 'Subscription API Endpoints' do
       tea_data = 1
       c1 = Customer.create(first_name: "Test", last_name: "Person1", email: "test@person1.com", address: "12345 Something Road")
       t1 = Tea.create(title: "Earl Grey", description: "Black Tea", temperature: 110, brew_time: 3)
-      post "/api/v1/customers/#{c1.id}/subscriptions", params: { email: c1.email, tea_id: t1.id }
+      post "/api/v1/customers/#{c1.id}/subscriptions", params: { customer_id: c1.id, tea_id: t1.id }
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
