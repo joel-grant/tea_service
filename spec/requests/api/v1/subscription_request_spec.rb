@@ -36,7 +36,7 @@ RSpec.describe 'Subscription API Endpoints' do
       c1 = Customer.create(first_name: "Test", last_name: "Person1", email: "test@person1.com", address: "12345 Something Road")
       t1 = Tea.create(title: "Earl Grey", description: "Black Tea", temperature: 110, brew_time: 3)
       sub = Subscription.create(title: "Earl Grey", price: 10, status: 0, frequency: 1, tea_id: t1.id, customer_id: c1.id)
-      delete "/api/v1/subscriptions/#{sub.id}"
+      patch  "/api/v1/subscriptions/#{sub.id}"
       result = JSON.parse(response.body, symbolize_names: true)
 
       expect(response).to be_successful
