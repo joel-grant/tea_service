@@ -167,6 +167,8 @@
 }
 ```
 
+</details>
+
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90fcbcf72d555bcbc462?action=collection%2Fimport)
 
 ## Database Design Schema
