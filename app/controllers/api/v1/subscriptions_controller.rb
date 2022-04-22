@@ -12,7 +12,7 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def create
-    customer_data = Customer.find_by(email: params[:email])
+    customer_data = Customer.find(params[:customer_id])
     tea_data = Tea.find(params[:tea_id])
     if customer_data.valid? && tea_data.valid?
       sub = Subscription.create(title: tea_data.title, price: 10, frequency: 1, customer_id: customer_data.id, tea_id: tea_data.id)
