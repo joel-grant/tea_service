@@ -28,4 +28,4 @@ Subscription.create(title: t3.title, price: 10.00, status: 0, frequency: 1, tea_
 Subscription.create(title: t2.title, price: 10.00, status: 0, frequency: 1, tea_id: t2.id, customer_id: c2.id)
 Subscription.create(title: t3.title, price: 10.00, status: 0, frequency: 1, tea_id: t3.id, customer_id: c2.id)
 
-Subscription.create(title: t2.title, price: 10.00, status: 1, frequency: 1, tea_id: t2.id, customer_id: c1.id)
+Subscription.create(title: t2.title, price: 10.00, status: 1, frequency: 1, tea_id: t2.id, customer_id: c3.id)
