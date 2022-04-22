@@ -14,7 +14,7 @@
 ## Endpoint Information:
 
 ### Get All User Subscriptions
-- `GET '/api/v1/subscriptions'`
+- `GET '/api/v1/customers/customer_id/subscriptions'`
 ```json
 {
   "user_id": "<user_id>"
@@ -22,7 +22,7 @@
 ```
 
 ### Get All Active User Subscriptions
-- `GET '/api/v1/subscriptions'`
+- `GET '/api/v1/subscriptions?customer_id=1&status=active'`
 ```json
 {
   "user_id": "<user_id>",
@@ -31,7 +31,7 @@
 ```
 
 ### Get All Cancelled User Subscriptions
-- `GET '/api/v1/subscriptions'`
+- `GET '/api/v1/customers/customer_id/subscriptions?&status=cancelled'`
 ```json
 {
   "user_id": "<user_id>",
@@ -40,7 +40,7 @@
 ```
 
 ### Cancel A subscription
-- `DELETE '/api/v1/subscriptions'`
+- `DELETE '/api/v1/subscriptions/id'`
 ```json
 {
   "tea_id": "<tea_id>"
@@ -48,10 +48,10 @@
 ```
 
 ### Create a new Subscription
-- `'POST '/api/v1/subscriptions'`
+- `'POST '/api/v1/customers/customer_id/subscriptions/?tea_id=2'`
 ```json
 {
-  "email": "<email>",
+  "customer_id": "<customer_id>",
   "tea_id": "<tea_id>"
 }
 ```
