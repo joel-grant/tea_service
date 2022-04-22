@@ -15,44 +15,155 @@
 
 ### Get All User Subscriptions
 - `GET '/api/v1/customers/customer_id/subscriptions'`
+<details>
+  <summary>A successful response will look like:</summary>
+  
 ```json
 {
-  "user_id": "<user_id>"
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "id": 1,
+                "title": "Earl Grey",
+                "price": 10.0,
+                "status": "active",
+                "frequency": "biweekly"
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "id": 2,
+                "title": "Green",
+                "price": 10.0,
+                "status": "active",
+                "frequency": "biweekly"
+            }
+        }
 }
 ```
+  
+</details>
 
 ### Get All Active User Subscriptions
-- `GET '/api/v1/subscriptions?customer_id=1&status=active'`
+- `GET '/api/v1/customers/customer_id/subscriptions?status=active'`
+
+<details>
+  <summary>A successful response will look like:</summary>
+  
 ```json
 {
-  "user_id": "<user_id>",
-  "status": "active"
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "id": 1,
+                "title": "Earl Grey",
+                "price": 10.0,
+                "status": "active",
+                "frequency": "biweekly"
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscription",
+            "attributes": {
+                "id": 2,
+                "title": "Green",
+                "price": 10.0,
+                "status": "active",
+                "frequency": "biweekly"
+            }
+        }
 }
 ```
+  
+</details>
 
 ### Get All Cancelled User Subscriptions
 - `GET '/api/v1/customers/customer_id/subscriptions?&status=cancelled'`
+
+<details>
+  <summary>A Successful response will look like this:</summary>
+  
 ```json
 {
-  "user_id": "<user_id>",
-  "status": "cancelled"
+    "data": [
+        {
+            "id": "1",
+            "type": "subscription",
+            "attributes": {
+                "id": 1,
+                "title": "Earl Grey",
+                "price": 10.0,
+                "status": "cancelled",
+                "frequency": "biweekly"
+            }
+        },
+        {
+            "id": "6",
+            "type": "subscription",
+            "attributes": {
+                "id": 6,
+                "title": "Green",
+                "price": 10.0,
+                "status": "cancelled",
+                "frequency": "biweekly"
+            }
+        }
+    ]
 }
 ```
+  
+</details>
 
 ### Cancel A subscription
-- `DELETE '/api/v1/subscriptions/id'`
+- `PATCH '/api/v1/subscriptions/id'`
+
+<details>
+  <summary>A Successful response will look like:</summary>
+  
 ```json
 {
-  "tea_id": "<tea_id>"
+    "data": {
+        "id": "1",
+        "type": "subscription",
+        "attributes": {
+            "id": 1,
+            "title": "Earl Grey",
+            "price": 10.0,
+            "status": "cancelled",
+            "frequency": "biweekly"
+        }
+    }
 }
 ```
+  
+</details>
 
 ### Create a new Subscription
 - `'POST '/api/v1/customers/customer_id/subscriptions/?tea_id=2'`
+
+<details>
+  <summary>A successful response will look like this:</summary>
+  
 ```json
 {
-  "customer_id": "<customer_id>",
-  "tea_id": "<tea_id>"
+    "data": {
+        "id": "8",
+        "type": "subscription",
+        "attributes": {
+            "id": 2,
+            "title": "Green",
+            "price": 10.0,
+            "status": "active",
+            "frequency": "biweekly"
+        }
+    }
 }
 ```
 
