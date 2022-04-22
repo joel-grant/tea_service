@@ -8,8 +8,16 @@
 ## How to run tests for this repository
 1. `git clone` this repository.
 2. `cd tea_service`
-3. run `bundle exec rspec` to see the passing tests!
-4. All testing can be found in `/spec` directory.
+3. run `bundle`
+4. run `bundle exec rspec` to see the passing tests!
+5. All testing can be found in `/spec` directory.
+
+## How how to use the endpoints:
+1. `cd` into the repository
+2. run `rails s`
+3. click the Postman link below!
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90fcbcf72d555bcbc462?action=collection%2Fimport)
 
 ## Endpoint Information:
 
@@ -170,10 +178,6 @@
 ```
 
 </details>
-
-## Try these out in Postman!
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/90fcbcf72d555bcbc462?action=collection%2Fimport)
 
 ## Database Design Schema
 <img width="725" alt="Screen Shot 2022-04-20 at 10 30 25 AM" src="https://user-images.githubusercontent.com/69736499/164280862-e0411530-e22f-42f3-8c6e-4d7473027d1e.png">
